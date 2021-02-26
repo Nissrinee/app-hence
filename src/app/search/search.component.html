@@ -1,0 +1,151 @@
+
+
+<form id="form"   [ngClass]="{ 'list-item1': condition,'list-item2': !condition }" >
+    <div class=".form-group" >
+        <span class="title"> <span >Youtube</span> Harvester</span>
+        <input #inputText  (change)="changetext(inputText)" class="form-field"  type="text" placeholder="Search .." >
+        <button  id="btn1"   (click)="loadata()"    class="btn btn-sm btn-outline-secondary" type="submit">search</button>
+        
+        
+        <ul class="list">
+            <div  class="list-item">
+                <input (change)="condition = true;type=1;emit()"  type="radio" class="radio-btn" name="choice" id="a-opt" />
+                <label for="a-opt" class="label">Search by id</label>
+            </div>
+            
+            <div   class="list-item">
+                <input  (change)="condition = true;type=2;emit()"  type="radio" class="radio-btn" name="choice" id="b-opt" />
+                <label for="b-opt" class="label"> Search by link</label>
+            </div> 
+            
+            <div  class="list-item">
+                <input  (change)="condition = false;type=3;emit()"  type="radio" class="radio-btn" name="choice" id="c-opt" />
+                <label for="c-opt" class="label"> Search by query</label>
+            </div>
+        </ul>
+    </div>
+    <div class="container">
+        <iframe width="560" height="315" [src]="urlSafe"  id="ytbid"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"  allowfullscreen></iframe>
+        <div id="vid" >   
+        </div>
+    
+    </div>
+    <div id="filter">
+        <div class="advs">
+            <span>DATE D'AJOUT</span>
+            <label class="radio">
+                <input type="radio" name="r" value="1" checked>
+                <span>Aujourd'hui</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="2">
+                <span>Cette semaine</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="3">
+                <span>Ce mois-ci</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="4">
+                <span>Cette année</span>
+            </label>
+        </div>
+        <div class="advs2">
+            <span>TYPE</span>
+            <label class="radio">
+                <input type="radio" name="2" value="1" checked>
+                <span>Vidéo</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="2" value="2">
+                <span>Chaine</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="2" value="3">
+                <span>Playlist</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="2" value="4">
+                <span>Film</span>
+            </label>
+        </div>
+        <div class="advs3">
+            <span>Durée</span>
+            <label class="radio">
+                <input type="radio" name="3" value="1" checked>
+                <span>Courtes (< 4 min)</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="3" value="2">
+                <span>Longues (> 20 min)</span>
+            </label>
+            
+        </div>
+        <div class="advs4">
+            <span>Fonctionnalite</span>
+            <label class="radio">
+                <input type="checkbox" name="4" value="1" checked>
+                <span>En direct</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="2">
+                <span>4K</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="3">
+                <span>HD</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="4">
+                <span>Sous titres</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="5">
+                <span>Creative Commons</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="6">
+                <span>360°</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="7">
+                <span>VR180</span>
+            </label>
+            <label class="radio">
+                <input type="checkbox" name="4" value="8">
+                <span>3D</span>
+            </label>
+            
+            
+            
+        </div>
+        <div class="advs5">
+            <span>Trier Par</span>
+            <label class="radio">
+                <input type="radio" name="r" value="1" checked>
+                <span>Pertinence</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="2">
+                <span>Date de mise en ligne</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="3">
+                <span>Nombre de vues</span>
+            </label>
+            <label class="radio">
+                <input type="radio" name="r" value="4">
+                <span>Avis</span>
+            </label>
+            
+        </div>
+    </div>
+    
+    
+</form>
+
+
+
+
+
+
